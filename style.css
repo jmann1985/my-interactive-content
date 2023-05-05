@@ -84,4 +84,10 @@ h1 {
   cursor: pointer;
 }
 
+#centered-image {
+  display: block;
+  margin: 30px auto;
+  width: 50%; 
+  height: auto; 
+}
 
