@@ -77,6 +77,33 @@ h1 {
   width: 80%;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0
+}
+
+.hidden-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  line-height: 100px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
   </style>
 </head>
@@ -104,11 +131,15 @@ h1 {
 <br>
    <div class="image-container">
       <img id="hidden-image" src="rat.jpeg" alt="OH No! It's a RAT">
-  </div>
+   
+   <div id="hidden-text" style="display: none;">Oh no, it's a RAT!</div>
+</div>
 
   <div id="modal" class="modal">
     <div class="modal-content">
+     <div class="modal-header">
       <span class="close">&times;</span>
+    </div>
       <h2 id="modal-title"></h2>
       <p id="modal-description"></p>
 
@@ -165,11 +196,10 @@ const hiddenImage = document.getElementById('hidden-image');
 
 imageContainer.addEventListener('mouseover', () => {
   hiddenImage.style.display = 'block';
+  hiddenText.style.display = 'block';
 });
 
-imageContainer.addEventListener('mouseout', () => {
-  hiddenImage.style.display = 'none';
-});
+
 
 hiddenImage.addEventListener('click', () => {
   window.location.href = 'https://www.minitool.com/backup-tips/remote-access-trojan.html';
